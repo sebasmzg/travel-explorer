@@ -7,6 +7,9 @@ import { CoreModule } from './core.module';
 import { SharedModule } from './shared.module';
 import { HttpClientModule} from '@angular/common/http';
 import {DestinationService} from './features/destinations/services/destination.service';
+import {MapService} from './features/map/services/map.service';
+import {NgxLeafletModule} from 'ngx-leaflet';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import {DestinationService} from './features/destinations/services/destination.s
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule
   ],
   providers: [
-    DestinationService
+    DestinationService,
+    MapService
   ],
   bootstrap: [AppComponent]
 })

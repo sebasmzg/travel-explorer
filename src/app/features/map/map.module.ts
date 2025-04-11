@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MapRoutingModule } from './map-routing.module';
 import { MapComponent } from './map.component';
 import { MapViewComponent } from './pages/map-view/map-view.component';
+import {FormsModule} from '@angular/forms';
+import {NgxLeafletModule} from 'ngx-leaflet';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { MapViewComponent } from './pages/map-view/map-view.component';
   ],
   imports: [
     CommonModule,
-    MapRoutingModule
-  ]
+    MapRoutingModule,
+    FormsModule,
+    LeafletModule
+  ],
+  exports: [MapComponent]
 })
 export class MapModule { }

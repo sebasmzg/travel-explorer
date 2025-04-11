@@ -1,1 +1,17 @@
-<p>map-view works!</p>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Search for locations" />
+<button (click)="searchLocation()">Search</button>
+
+<div *ngIf="loading">Cargando ubicaciones...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<ul *ngIf="locations.length > 0">
+  <li *ngFor="let location of locations">
+    <strong>{{ location.name }}</strong> ({{ location.country }})
+    <a [href]="location.googleMapsUrl" target="_blank">Ver en Google Maps</a>
+    <a [href]="location.openStreetMapsUrl" target="_blank">Ver en OpenStreetMap</a>
+  </li>
+</ul>
+
+<div  class="map-container">
+  <div id="map"></div>
+</div>

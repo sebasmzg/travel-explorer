@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MapLocation} from '../../models/map.model';
+import {MapService} from './services/map.service';
 
 @Component({
   selector: 'app-map',
